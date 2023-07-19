@@ -15,11 +15,21 @@ bool Parser::hasMoreLines() {
 
 void Parser::advance() {
     if (hasMoreLines()) {
-        getInstruction();
+        getCommand();
     }
 }
 
-CType Parser::commandType();
+Parser::CType Parser::commandType() {
+    if (curCommand.find("push") != std::string::npos) {
+        return CType::C_PUSH;
+    }
+    else if (curCommand.find("pop") != std::string::npos) {
+        return CType::C_POP;
+    }
+    else {
+        return
+    }
+}
 
 string Parser::arg1();
 
@@ -28,21 +38,23 @@ int Parser::arg2();
 void Parser::reset() {
     source.clear();
     source.seekg(0, std::ios_base::beg);
-    curInstruction="";
+    curCommand="";
 }
 
-void Parser::getInstruction() {
-    string nextInstruciton;
-    while (nextInstruciton.empty() && hasMoreLines()) {
-        std::getline(source, nextInstruciton);
-        //ignore Space and Comment
-        nextInstruciton.erase(std::remove_if(nextInstruciton.begin(), nextInstruciton.end(), ::isspace), nextInstruciton.end());
-        for (auto it=nextInstruciton.begin(); it != nextInstruciton.end(); it++) {
-            if (*it == '/' && it + 1 != nextInstruciton.end() && *(it+1) == '/') {
-                nextInstruciton.erase(it, nextInstruciton.end());
+void Parser::getCommand() {
+    string nextCommand;
+    while (nextCommand.empty() && hasMoreLines()) {
+        std::getline(source, nextCommand);
+        //ignore Space and Comments
+        for (auto it=nextCommand.begin(); it != nextCommand.end(); it++) {
+            if (*it == '/' && it + 1 != nextCommand.end() && *(it+1) == '/') {
+                nextCommand.erase(it, nextCommand.end());
                 break;
             }
         }
+        size_t first = nextCommand.find_first_not_of(' ');
+        size_t last = nextCommand.find_last_not_of(' ');
+        nextCommand = nextCommand.substr(first, last - first + 1);
     }
-    curInstruction = nextInstruciton;
+    curCommand = nextCommand;
 }

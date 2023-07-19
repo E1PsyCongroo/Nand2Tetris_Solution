@@ -17,6 +17,6 @@ class Parser
 
     private:
     ifstream source;
-    string curInstruction;
-    void getInstruction();
+    string curCommand;
+    void getCommand();
 };
