@@ -1,7 +1,11 @@
 /*reads and parses an instruction*/
+#pragma once
+
 #include <fstream>
 #include <string>
+#include <set>
 using std::ifstream; using std::string;
+using std::set;
 class Parser
 {
     public:
@@ -14,9 +18,11 @@ class Parser
     string arg1();
     int arg2();
     void reset();
+    string curCom();
 
     private:
     ifstream source;
     string curCommand;
     void getCommand();
+    set<string> alCommand = {"add", "sub", "neg", "eq", "lt", "gt", "and", "or", "not"};
 };
