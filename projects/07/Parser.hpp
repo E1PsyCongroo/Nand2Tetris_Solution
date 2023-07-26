@@ -24,5 +24,5 @@ class Parser
     ifstream source;
     string curCommand;
     void getCommand();
-    set<string> alCommand = {"add", "sub", "neg", "eq", "lt", "gt", "and", "or", "not"};
+    const set<string> ALCommand = {"add", "sub", "neg", "eq", "lt", "gt", "and", "or", "not"};
 };

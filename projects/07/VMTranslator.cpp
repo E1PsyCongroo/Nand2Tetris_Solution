@@ -26,9 +26,11 @@ int main(const int argc, const char* argv[]) {
             break;
         }
         else if (parser.commandType() == Parser::CType::C_PUSH | parser.commandType() == Parser::CType::C_POP) {
+            codeWriter.writeComment(parser.curCom());
             codeWriter.writerPushPop(parser.commandType(), parser.arg1(), parser.arg2());
         }
         else if (parser.commandType() == Parser::CType::C_ARITHMETIC) {
+            codeWriter.writeComment(parser.curCom());
             codeWriter.writeArithmetic(parser.arg1());
         }
         else {

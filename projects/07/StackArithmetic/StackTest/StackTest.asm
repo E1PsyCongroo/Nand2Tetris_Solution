@@ -22,12 +22,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@eq_0
+@__eq_0
 D;JEQ
 @SP
 A=M
 M=0
-(eq_0)
+(__eq_0)
 @SP
 M=M+1
 // push constant 17
@@ -54,12 +54,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@eq_1
+@__eq_1
 D;JEQ
 @SP
 A=M
 M=0
-(eq_1)
+(__eq_1)
 @SP
 M=M+1
 // push constant 16
@@ -86,12 +86,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@eq_2
+@__eq_2
 D;JEQ
 @SP
 A=M
 M=0
-(eq_2)
+(__eq_2)
 @SP
 M=M+1
 // push constant 892
@@ -118,12 +118,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@lt_3
+@__lt_3
 D;JLT
 @SP
 A=M
 M=0
-(lt_3)
+(__lt_3)
 @SP
 M=M+1
 // push constant 891
@@ -150,12 +150,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@lt_4
+@__lt_4
 D;JLT
 @SP
 A=M
 M=0
-(lt_4)
+(__lt_4)
 @SP
 M=M+1
 // push constant 891
@@ -182,12 +182,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@lt_5
+@__lt_5
 D;JLT
 @SP
 A=M
 M=0
-(lt_5)
+(__lt_5)
 @SP
 M=M+1
 // push constant 32767
@@ -214,12 +214,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@gt_6
+@__gt_6
 D;JGT
 @SP
 A=M
 M=0
-(gt_6)
+(__gt_6)
 @SP
 M=M+1
 // push constant 32766
@@ -246,12 +246,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@gt_7
+@__gt_7
 D;JGT
 @SP
 A=M
 M=0
-(gt_7)
+(__gt_7)
 @SP
 M=M+1
 // push constant 32766
@@ -278,12 +278,12 @@ D=M
 AM=M-1
 D=M-D
 M=-1
-@gt_8
+@__gt_8
 D;JGT
 @SP
 A=M
 M=0
-(gt_8)
+(__gt_8)
 @SP
 M=M+1
 // push constant 57
@@ -374,6 +374,6 @@ AM=M-1
 M=!M
 @SP
 M=M+1
-(END)
-@END
+(__END)
+@__END
 0;JMP

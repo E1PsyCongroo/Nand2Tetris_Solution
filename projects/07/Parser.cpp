@@ -21,13 +21,13 @@ void Parser::advance() {
 }
 
 Parser::CType Parser::commandType() {
-    if (curCommand.find("push") != std::string::npos) {
+    if (curCommand.find("push") == 0) {
         return CType::C_PUSH;
     }
-    else if (curCommand.find("pop") != std::string::npos) {
+    else if (curCommand.find("pop") == 0) {
         return CType::C_POP;
     }
-    else if (alCommand.find(curCommand) != alCommand.end()) {
+    else if (ALCommand.find(curCommand) != ALCommand.end()) {
         return CType::C_ARITHMETIC;
     }
     else {
