@@ -1,0 +1,20 @@
+[
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\CodeWriter.dir\\CodeWriter.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\08\\CodeWriter.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/CodeWriter.cpp",
+  "output": "CMakeFiles/CodeWriter.dir/CodeWriter.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\Parser.dir\\Parser.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\08\\Parser.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/Parser.cpp",
+  "output": "CMakeFiles/Parser.dir/Parser.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/VMTranslator.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\VMTranslator.dir\\VMTranslator.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\08\\VMTranslator.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/VMTranslator.cpp",
+  "output": "CMakeFiles/VMTranslator.dir/VMTranslator.cpp.obj"
+}
+]

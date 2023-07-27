@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "VMTranslator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CodeWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CodeWriter-Debug-78dc55cf39ad25391e33.json",
+					"name" : "CodeWriter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Parser::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Parser-Debug-015917bb60b0c11b5862.json",
+					"name" : "Parser",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VMTranslator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VMTranslator-Debug-c04e8aee95977d06035f.json",
+					"name" : "VMTranslator",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build",
+		"source" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/08"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,5 @@
+E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build/CMakeFiles/CodeWriter.dir
+E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build/CMakeFiles/Parser.dir
+E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build/CMakeFiles/VMTranslator.dir
+E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build/CMakeFiles/edit_cache.dir
+E:/cs_study/Nand2Tetris/nand2tetris/projects/08/build/CMakeFiles/rebuild_cache.dir

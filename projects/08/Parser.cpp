@@ -30,30 +30,75 @@ Parser::CType Parser::commandType() {
     else if (ALCommand.find(curCommand) != ALCommand.end()) {
         return CType::C_ARITHMETIC;
     }
+    else if (curCommand.find("label") == 0) {
+        return CType::C_LABEL;
+    }
+    else if (curCommand.find("goto") == 0) {
+        return CType::C_GOTO;
+    }
+    else if (curCommand.find("call") == 0) {
+        return CType::C_CALL;
+    }
+    else if (curCommand.find("if-goto") == 0) {
+        return CType::C_IF;
+    }
+    else if (curCommand.find("function") == 0) {
+        return CType::C_FUNCTION;
+    }
+    else if (curCommand.find("return") == 0) {
+        return CType::C_RETURN;
+    }
     else {
         return CType::EMPTY;
     }
 }
 
 string Parser::arg1() {
-    CType type = commandType();
-    if (type == CType::C_PUSH || type == CType::C_POP) {
-        auto first = curCommand.find_first_of(' ');
-        auto last = curCommand.find_last_of(' ');
-        return curCommand.substr(first+1, last-first-1);
+    const set<CType> onlyCmd = {CType::C_ARITHMETIC, CType::C_RETURN};
+    const CType type = commandType();
+    if (type == CType::EMPTY) {
+        // throw std::runtime_error("Empty cmd don't have arg1()!");
+        return "";
+    }
+    else if (onlyCmd.count(type)) {
+        return curCommand;
     }
     else {
-        return curCommand;
+        string temp = curCommand;
+        for (int i = 0; i < 1; i ++) {
+            auto start = temp.find_first_of(' ');
+            temp = temp.substr(start);
+            start = temp.find_first_not_of(' ');
+            temp = temp.substr(start);
+        }
+
+        auto last = temp.find_first_of(' ');
+        if (last != std::string::npos) {
+            return temp.substr(0, last);
+        }
+        else {
+            return temp;
+        }
     }
 }
 
 int Parser::arg2() {
-    CType type = commandType();
-    if (type == CType::C_PUSH || type == CType::C_POP) {
-        auto first = curCommand.find_last_of(' ');
-        return std::stoi(curCommand.substr(first+1));
+    const CType type = commandType();
+    if (type == CType::C_PUSH || type == CType::C_POP || type == CType::C_FUNCTION || type == CType::C_CALL) {
+        string temp = curCommand;
+        for (int i = 0; i < 2; i ++) {
+            auto start = temp.find_first_of(' ');
+            temp = temp.substr(start);
+            start = temp.find_first_not_of(' ');
+            temp = temp.substr(start);
+        }
+
+        return std::stoi(temp);
     }
-    return 0;
+    else {
+        // throw std::runtime_error("\"" + curCommand + "\"" + " cmd don't have arg2()!");
+        return 0;
+    }
 }
 
 void Parser::reset() {

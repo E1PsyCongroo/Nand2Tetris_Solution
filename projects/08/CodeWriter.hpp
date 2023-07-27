@@ -1,4 +1,5 @@
 /*Generates assembly code from the parsed VM command*/
+#pragma once
 #include <fstream>
 #include <string>
 #include "Parser.hpp"
@@ -11,6 +12,8 @@ private:
     ofstream ofs;
     int symbolIndex;
     string filename;
+    string curFunctionName;
+    int returnIndex;
     map<string, string> segmentMap = {
         {"local", "LCL"},
         {"this", "THIS"},
@@ -28,15 +31,23 @@ private:
         {"or", "M=M|D\n"},
         {"not", "M=!M\n"},
     };
-    void writerPushD(); // push(D)
-    void writerPopD();  // D = pop()
-    void writerPush(string segment, int index); // push segment index
-    void writerPop(string segment, int index);  // pop segment index
+    void writePushD(); // push(D)
+    void writePopD();  // D = pop()
+    void writePush(string segment, int index); // push segment index
+    void writePop(string segment, int index);  // pop segment index
 public:
-    CodeWriter(string filename);
+    CodeWriter(string openfile, string filename);
     ~CodeWriter();
     void writeComment(string command);  // comment
     void writeArithmetic(string command); // arithmetic&logical
-    void writerPushPop(Parser::CType commandType, string segment, int index); // push&pop
-    void writerEnd(); // end of program
+    void writePushPop(Parser::CType commandType, string segment, int index); // push&pop
+    void writeEnd(); // end of program
+    void writeLabel(string label);
+    void writeGoto(string label);
+    void writeIf(string label);
+    void writeFunction(string functionName, int nVars);
+    void writeCall(string functionName, int nArgs);
+    void writeReturn();
+    void writeInit();
+    void setFilename(string filename);
 };

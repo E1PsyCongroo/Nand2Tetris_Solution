@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libCodeWriter.a CMakeFiles/CodeWriter.dir/CodeWriter.cpp.obj
+C:\MinGW\bin\ranlib.exe libCodeWriter.a
