@@ -1,0 +1,39 @@
+class Token {
+    field char ch;
+    field int value;
+
+    constructor Token new(char Tch, int Tval) {
+        let ch = Tch;
+        let value = Tval;
+        return this;
+    }
+
+    method void reset(char Tch, int Tval) {
+        let ch = Tch;
+        let value = Tval;
+        return;
+    }
+
+    method char getCh() {
+        return ch;
+    }
+
+    method int getVal() {
+        return value;
+    }
+
+    method void print() {
+        do Output.printString("operator: ");
+        do Output.printChar(ch);
+        do Output.println();
+        do Output.printString("value: ");
+        do Output.printInt(value);
+        do Output.println();
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

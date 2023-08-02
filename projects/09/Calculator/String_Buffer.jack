@@ -1,0 +1,50 @@
+class String_Buffer {
+    field boolean empty, full;
+    field String str_buffer;
+    field char ch_buffer;
+
+    constructor String_Buffer new() {
+        let empty = true;
+        let full = false;
+        return this;
+    }
+
+    method void putBack(char ch) {
+        if (full) {
+            do Output.printString("error: Can't put char back to full ch_buffer");
+            do Sys.error(1);
+        }
+        else {
+            let ch_buffer = ch;
+            let full = true;
+        }
+        return;
+    }
+
+    method char get() {
+        var char result;
+        if (full) {
+            let result = ch_buffer;
+            let full = false;
+        }
+        else {
+            while (empty) {
+                let str_buffer = Keyboard.readLine("");
+                if (~(str_buffer.length() = 0)) {
+                    let empty = false;
+                }
+            }
+            let result = str_buffer.charAt(0);
+            let str_buffer = String_Stream.ignore(str_buffer);
+            if (str_buffer.length() = 0) {
+                let empty = true;
+            }
+        }
+        return result;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

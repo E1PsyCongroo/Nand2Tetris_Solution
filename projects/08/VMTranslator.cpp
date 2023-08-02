@@ -21,14 +21,14 @@ int main(const int argc, const char* argv[]) {
     }
     path inputPath = argv[1];
     cout << "Input PATH: " << inputPath << '\n';
-    if (inputPath.has_filename()) {
+    if (is_regular_file(inputPath)) {
         Parser parser(inputPath.string());
         CodeWriter codeWriter(inputPath.replace_extension("asm").string(), inputPath.stem().string());
         writer(parser, codeWriter);
         codeWriter.writeEnd();
     }
     else {
-        string filename = inputPath.parent_path().filename().string() + ".asm";
+        string filename = inputPath.filename().string() + ".asm";
         CodeWriter codeWriter(inputPath.string() + "\\" + filename, "Sys");
         codeWriter.writeComment("SP=256");
         codeWriter.writeComment("call Sys.init 0");

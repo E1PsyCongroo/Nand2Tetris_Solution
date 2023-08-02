@@ -1,0 +1,63 @@
+class String_Stream {
+    function boolean is_digital(char ch) {
+        if ((ch > 47) & (ch < 58)) {
+            return true;
+        }
+        return false;
+    }
+
+    function boolean is_alpha(char ch) {
+        if (((ch > 64) & (ch < 91)) | ((ch > 96) & (ch < 123))) {
+            return true;
+        }
+        return false;
+    }
+
+    function boolean is_space(char ch) {
+        if ((ch = 32) | (ch = 128)) {
+            return true;
+        }
+        return false;
+    }
+
+    function String substr(String str, int pos, int length) {
+        var String result;
+        var int i;
+        let result = String.new(length);
+        let i = 0;
+        do Output.printString(str);
+        do Output.println();
+        while (i < length) {
+            do result.appendChar(str.charAt(pos + i));
+            let i = i + 1;
+        }
+        do str.dispose();
+        return result;
+    }
+
+    function String ignore_digital(String str) {
+        var boolean flag;
+        let flag = true;
+        while (~(str.length() = 0) & flag) {
+            if (String_Stream.is_digital(str.charAt(0))) {
+                let str = String_Stream.ignore(str);
+            }
+            else {
+                let flag = false;
+            }
+        }
+        return str;
+    }
+
+    function String ignore(String str) {
+        var int i, length;
+        let i = 0;
+        let length = str.length();
+        while (i < (length-1)) {
+            do str.setCharAt(i, str.charAt(i+1));
+            let i = i + 1;
+        }
+        do str.eraseLastChar();
+        return str;
+    }
+}

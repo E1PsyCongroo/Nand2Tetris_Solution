@@ -1,0 +1,76 @@
+class Token_Buffer {
+    field boolean full;
+    field Token buffer;
+    field String_Buffer str_buffer;
+
+    constructor Token_Buffer new() {
+        let full = false;
+        let buffer = Token.new(0, 0);
+        let str_buffer = String_Buffer.new();
+        return this;
+    }
+
+    method Token get() {
+        var char ch;
+        var int val;
+        var Token t;
+        if (full) {
+            let full = false;
+            return buffer;
+        }
+        else {
+            let ch = str_buffer.get();
+            while (String_Stream.is_space(ch)) {
+                let ch = str_buffer.get();
+            }
+            if (Token_Buffer.is_operator(ch)) {
+                let t = Token.new(ch, 0);
+                return t;
+            }
+            else {
+                if (String_Stream.is_digital(ch)) {
+                    let val = 0;
+                    while (String_Stream.is_digital(ch)) {
+                        let val = val * 10 + (ch - 48);
+                        let ch = str_buffer.get();
+                    }
+                    do str_buffer.putBack(ch);
+                    let t = Token.new(100, val);
+                    return t;
+                }
+            }
+        }
+        do Output.printString("error in Token_Buffer.get()!");
+        do Output.println();
+        do Output.printString("error: unknow operator");
+        do Sys.error(1);
+        do input.dispose();
+        return buffer;
+    }
+
+    method void putBack(Token t) {
+        if (full) {
+            do Output.printString("error: Can't put token back to full buffer");
+            do Sys.error(1);
+        }
+        else {
+            let buffer = t;
+            let full = true;
+        }
+        do t.dispose();
+        return;
+    }
+
+    function boolean is_operator(char ch) {
+        // ch = '*' | '+' | '/' | '-' | '(' | ')' | 'Q' | ';' : true else false
+        if ((ch = 42) | (ch = 43) | (ch = 47) | (ch = 45) | (ch = 40) | (ch = 41) | (ch = 81) | (ch = 113) | (ch = 59)) {
+            return true;
+        }
+        return false;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

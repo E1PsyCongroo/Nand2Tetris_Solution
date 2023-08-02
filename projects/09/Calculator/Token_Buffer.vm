@@ -1,0 +1,372 @@
+function Token_Buffer.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 0
+push constant 0
+call Token.new 2
+pop this 1
+call String_Buffer.new 0
+pop this 2
+push pointer 0
+return
+function Token_Buffer.get 3
+push argument 0
+pop pointer 0
+push this 0
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+pop this 0
+push this 1
+return
+goto IF_END0
+label IF_FALSE0
+push this 2
+call String_Buffer.get 1
+pop local 0
+label WHILE_EXP0
+push local 0
+call String_Stream.is_space 1
+not
+if-goto WHILE_END0
+push this 2
+call String_Buffer.get 1
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push local 0
+call Token_Buffer.is_operator 1
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 0
+push constant 0
+call Token.new 2
+pop local 2
+push local 2
+return
+goto IF_END1
+label IF_FALSE1
+push local 0
+call String_Stream.is_digital 1
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+pop local 1
+label WHILE_EXP1
+push local 0
+call String_Stream.is_digital 1
+not
+if-goto WHILE_END1
+push local 1
+push constant 10
+call Math.multiply 2
+push local 0
+push constant 48
+sub
+add
+pop local 1
+push this 2
+call String_Buffer.get 1
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+push this 2
+push local 0
+call String_Buffer.putBack 2
+pop temp 0
+push constant 100
+push local 1
+call Token.new 2
+pop local 2
+push local 2
+return
+label IF_FALSE2
+label IF_END1
+label IF_END0
+push constant 28
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 84
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 95
+call String.appendChar 2
+push constant 66
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+push constant 103
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 40
+call String.appendChar 2
+push constant 41
+call String.appendChar 2
+push constant 33
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 22
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 119
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 1
+call Sys.error 1
+pop temp 0
+call input.dispose 0
+pop temp 0
+push this 1
+return
+function Token_Buffer.putBack 0
+push argument 0
+pop pointer 0
+push this 0
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 42
+call String.new 1
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 39
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 1
+call Sys.error 1
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push argument 1
+pop this 1
+push constant 0
+not
+pop this 0
+label IF_END0
+push argument 1
+call Token.dispose 1
+pop temp 0
+push constant 0
+return
+function Token_Buffer.is_operator 0
+push argument 0
+push constant 42
+eq
+push argument 0
+push constant 43
+eq
+or
+push argument 0
+push constant 47
+eq
+or
+push argument 0
+push constant 45
+eq
+or
+push argument 0
+push constant 40
+eq
+or
+push argument 0
+push constant 41
+eq
+or
+push argument 0
+push constant 81
+eq
+or
+push argument 0
+push constant 113
+eq
+or
+push argument 0
+push constant 59
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+return
+label IF_FALSE0
+push constant 0
+return
+function Token_Buffer.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

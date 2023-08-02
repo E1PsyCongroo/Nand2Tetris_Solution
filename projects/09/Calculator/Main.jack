@@ -1,0 +1,145 @@
+//------------------------------------------------------------------------------
+/* Grammar:
+    Expression:
+        Term
+        Term "+" Term
+        Term "-" Term
+    Term:
+        Primary
+        Primary "*" Primary
+        Primary "/" Primary
+    Primary:
+        Number
+        "-"Primary
+        "(" Expression ")"
+    Number:
+        floating-point-literal
+*/
+//------------------------------------------------------------------------------
+class Main {
+    static Token_Buffer tk_buffer;
+
+    function int main() {
+        var Token t;
+        var int value;
+        var boolean endFlag;
+
+        let tk_buffer = Token_Buffer.new();
+        let endFlag = false;
+        let value = 0;
+
+        //do Main.test();
+
+        do Output.printString("Input Expression:");
+        do Output.println();
+        while (~endFlag) {
+            //do Screen.clearScreen();
+            //do Output.moveCursor(0, 0);
+            let t = tk_buffer.get();
+
+            if (t.getCh() = 81) {   // if t.getCh() = 'Q': exit
+                let endFlag = true;
+            }
+            else {
+                if (t.getCh() = 59) {   // if t.getCh() = ';': print value
+                    do Output.printChar(61);
+                    do Output.printInt(value);
+                    do Output.println();
+                }
+                else {  // else: evalue expression
+                    do tk_buffer.putBack(t);
+                    let value = Main.Expression();
+                }
+            }
+        }
+        do Output.printString("Calculator Exit Successfully!");
+        do tk_buffer.dispose();
+        do t.dispose();
+        return 0;
+    }
+
+    function int Expression() {
+        var int result;
+        var Token t;
+
+        let result = Main.Term();
+        let t = tk_buffer.get();
+
+        if (t.getCh() = 43) {
+            let result = result + Main.Term();
+        }
+        else {
+            if (t.getCh() = 45) {
+                let result = result - Main.Term();
+            }
+            else {
+                do tk_buffer.putBack(t);
+            }
+        }
+        do t.dispose();
+        return result;
+    }
+
+    function int Term() {
+        var int result;
+        var Token t;
+
+        let result = Main.Primary();
+        let t = tk_buffer.get();
+
+        if (t.getCh() = 42) {
+            let result = result * Main.Primary();
+        }
+        else {
+            if (t.getCh() = 92) {
+                let result = result / Main.Primary();
+            }
+            else {
+                do tk_buffer.putBack(t);
+            }
+        }
+        do t.dispose();
+        return result;
+    }
+
+    function int Primary() {
+        var int result;
+        var Token t;
+
+        let t = tk_buffer.get();
+
+        if (t.getCh() = 100) {
+            let result = t.getVal();
+        }
+        else {
+            if (t.getCh() = 45) {
+                let result = -Main.Primary();
+            }
+            else {
+                if(t.getCh() = 40) {
+                    let result = Main.Expression();
+
+                    let t = tk_buffer.get();
+                    if (~(t.getCh() = 41)) {
+                        do Output.printString("error: ')' expected");
+                        do Sys.error(1);
+                    }
+                }
+                else {
+                    do tk_buffer.putBack(t);
+                }
+            }
+        }
+        do t.dispose();
+        return result;
+    }
+
+    function void test() {
+        var String str;
+        let str = Keyboard.readLine("");
+        let str = String_Stream.ignore(str);
+        do Output.printString(str);
+        do Output.println();
+        return;
+    }
+}

@@ -1,0 +1,162 @@
+function String_Stream.is_digital 0
+push argument 0
+push constant 47
+gt
+push argument 0
+push constant 58
+lt
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+return
+label IF_FALSE0
+push constant 0
+return
+function String_Stream.is_alpha 0
+push argument 0
+push constant 64
+gt
+push argument 0
+push constant 91
+lt
+and
+push argument 0
+push constant 96
+gt
+push argument 0
+push constant 123
+lt
+and
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+return
+label IF_FALSE0
+push constant 0
+return
+function String_Stream.is_space 0
+push argument 0
+push constant 32
+eq
+push argument 0
+push constant 128
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+return
+label IF_FALSE0
+push constant 0
+return
+function String_Stream.substr 2
+push argument 2
+call String.new 1
+pop local 0
+push constant 0
+pop local 1
+push argument 0
+call Output.printString 1
+pop temp 0
+call Output.println 0
+pop temp 0
+label WHILE_EXP0
+push local 1
+push argument 2
+lt
+not
+if-goto WHILE_END0
+push local 0
+push argument 0
+push argument 1
+push local 1
+add
+call String.charAt 2
+call String.appendChar 2
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+call String.dispose 1
+pop temp 0
+push local 0
+return
+function String_Stream.ignore_digital 1
+push constant 0
+not
+pop local 0
+label WHILE_EXP0
+push argument 0
+call String.length 1
+push constant 0
+eq
+not
+push local 0
+and
+not
+if-goto WHILE_END0
+push argument 0
+push constant 0
+call String.charAt 2
+call String_Stream.is_digital 1
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+call String_Stream.ignore 1
+pop argument 0
+goto IF_END0
+label IF_FALSE0
+push constant 0
+pop local 0
+label IF_END0
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+return
+function String_Stream.ignore 2
+push constant 0
+pop local 0
+push argument 0
+call String.length 1
+pop local 1
+label WHILE_EXP0
+push local 0
+push local 1
+push constant 1
+sub
+lt
+not
+if-goto WHILE_END0
+push argument 0
+push local 0
+push argument 0
+push local 0
+push constant 1
+add
+call String.charAt 2
+call String.setCharAt 3
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+call String.eraseLastChar 1
+pop temp 0
+push argument 0
+return
