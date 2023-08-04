@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libCompilationEngine.a CMakeFiles/CompilationEngine.dir/CompilationEngine.cpp.obj CMakeFiles/CompilationEngine.dir/JackTokenizer.cpp.obj
+C:\MinGW\bin\ranlib.exe libCompilationEngine.a

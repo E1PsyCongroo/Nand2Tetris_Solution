@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\JackAnalyzer.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\JackAnalyzer.dir/objects.a @CMakeFiles\JackAnalyzer.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\JackAnalyzer.dir/objects.a -Wl,--no-whole-archive -o JackAnalyzer.exe -Wl,--out-implib,libJackAnalyzer.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\JackAnalyzer.dir\linkLibs.rsp
