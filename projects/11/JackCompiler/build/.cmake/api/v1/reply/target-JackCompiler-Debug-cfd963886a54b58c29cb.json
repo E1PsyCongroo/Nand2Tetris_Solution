@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "JackAnalyzer.exe"
+			"path" : "JackCompiler.exe"
 		},
 		{
-			"path" : "JackAnalyzer.pdb"
+			"path" : "JackCompiler.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -29,19 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 13,
+				"line" : 15,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 15,
+				"line" : 17,
 				"parent" : 0
 			}
 		]
@@ -59,11 +59,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer"
+					"path" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer/build"
+					"path" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build"
 				}
 			],
 			"language" : "CXX",
@@ -89,10 +89,18 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "SymbolTable::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "VMWriter::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "CompilationEngine::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "JackAnalyzer::@6890427a1f51a3e7e1df",
+	"id" : "JackCompiler::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -112,6 +120,16 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "libSymbolTable.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libVMWriter.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
 				"fragment" : "libCompilationEngine.a",
 				"role" : "libraries"
 			},
@@ -122,8 +140,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "JackAnalyzer",
-	"nameOnDisk" : "JackAnalyzer.exe",
+	"name" : "JackCompiler",
+	"nameOnDisk" : "JackCompiler.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -144,7 +162,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "JackAnalyzer.cpp",
+			"path" : "JackCompiler.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

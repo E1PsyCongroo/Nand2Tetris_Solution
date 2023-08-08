@@ -133,8 +133,8 @@ CMakeFiles/CompilationEngine.dir/clean:
 # Target rules for target CMakeFiles/JackAnalyzer.dir
 
 # All Build rule for target.
-CMakeFiles/JackAnalyzer.dir/all: CMakeFiles/JackTokenizer.dir/all
 CMakeFiles/JackAnalyzer.dir/all: CMakeFiles/CompilationEngine.dir/all
+CMakeFiles/JackAnalyzer.dir/all: CMakeFiles/JackTokenizer.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\JackAnalyzer.dir\build.make CMakeFiles/JackAnalyzer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\JackAnalyzer.dir\build.make CMakeFiles/JackAnalyzer.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\cs_study\Nand2Tetris\nand2tetris\projects\10\JackAnalyzer\build\CMakeFiles --progress-num=4,5 "Built target JackAnalyzer"

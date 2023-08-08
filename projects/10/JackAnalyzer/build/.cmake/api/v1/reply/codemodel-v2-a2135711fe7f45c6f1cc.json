@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "JackAnalyzer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CompilationEngine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CompilationEngine-Debug-283f1021ed1d48c671d9.json",
+					"name" : "CompilationEngine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JackAnalyzer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JackAnalyzer-Debug-3478068c4231b209d43c.json",
+					"name" : "JackAnalyzer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JackTokenizer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JackTokenizer-Debug-92ad25eb843654e37aca.json",
+					"name" : "JackTokenizer",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer/build",
+		"source" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

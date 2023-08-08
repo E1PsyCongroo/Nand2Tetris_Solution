@@ -17,7 +17,9 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -29,12 +31,14 @@
 					[
 						0
 					],
-					"name" : "JackAnalyzer",
+					"name" : "JackCompiler",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -43,15 +47,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CompilationEngine::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CompilationEngine-Debug-283f1021ed1d48c671d9.json",
+					"jsonFile" : "target-CompilationEngine-Debug-10004500704e40a59574.json",
 					"name" : "CompilationEngine",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "JackAnalyzer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JackAnalyzer-Debug-0289ff76e8c25a3146a9.json",
-					"name" : "JackAnalyzer",
+					"id" : "JackCompiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JackCompiler-Debug-cfd963886a54b58c29cb.json",
+					"name" : "JackCompiler",
 					"projectIndex" : 0
 				},
 				{
@@ -60,6 +64,20 @@
 					"jsonFile" : "target-JackTokenizer-Debug-92ad25eb843654e37aca.json",
 					"name" : "JackTokenizer",
 					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SymbolTable::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SymbolTable-Debug-9a94cef3097220608e0a.json",
+					"name" : "SymbolTable",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VMWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VMWriter-Debug-f5c8c39ef02987fd9ba3.json",
+					"name" : "VMWriter",
+					"projectIndex" : 0
 				}
 			]
 		}
@@ -67,8 +85,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer/build",
-		"source" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/10/JackAnalyzer"
+		"build" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+		"source" : "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler"
 	},
 	"version" : 
 	{

@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libJackTokenizer.a CMakeFiles/JackTokenizer.dir/JackTokenizer.cpp.obj
+C:\MinGW\bin\ranlib.exe libJackTokenizer.a

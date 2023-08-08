@@ -1,0 +1,50 @@
+[
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\JackTokenizer.dir\\JackTokenizer.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\JackTokenizer.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/JackTokenizer.cpp",
+  "output": "CMakeFiles/JackTokenizer.dir/JackTokenizer.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\SymbolTable.dir\\SymbolTable.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\SymbolTable.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/SymbolTable.cpp",
+  "output": "CMakeFiles/SymbolTable.dir/SymbolTable.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\VMWriter.dir\\VMWriter.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\VMWriter.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/VMWriter.cpp",
+  "output": "CMakeFiles/VMWriter.dir/VMWriter.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\CompilationEngine.dir\\CompilationEngine.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\CompilationEngine.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/CompilationEngine.cpp",
+  "output": "CMakeFiles/CompilationEngine.dir/CompilationEngine.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\CompilationEngine.dir\\JackTokenizer.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\JackTokenizer.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/JackTokenizer.cpp",
+  "output": "CMakeFiles/CompilationEngine.dir/JackTokenizer.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\CompilationEngine.dir\\SymbolTable.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\SymbolTable.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/SymbolTable.cpp",
+  "output": "CMakeFiles/CompilationEngine.dir/SymbolTable.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\CompilationEngine.dir\\VMWriter.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\VMWriter.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/VMWriter.cpp",
+  "output": "CMakeFiles/CompilationEngine.dir/VMWriter.cpp.obj"
+},
+{
+  "directory": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/JackCompiler.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\JackCompiler.dir\\JackCompiler.cpp.obj -c E:\\cs_study\\Nand2Tetris\\nand2tetris\\projects\\11\\JackCompiler\\JackCompiler.cpp",
+  "file": "E:/cs_study/Nand2Tetris/nand2tetris/projects/11/JackCompiler/JackCompiler.cpp",
+  "output": "CMakeFiles/JackCompiler.dir/JackCompiler.cpp.obj"
+}
+]
