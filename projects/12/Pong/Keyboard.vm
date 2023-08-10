@@ -1,0 +1,157 @@
+function Keyboard.init 0
+push constant 24576
+pop static 0
+push constant 0
+return
+function Keyboard.keyPressed 0
+push static 0
+call Memory.peek 1
+return
+function Keyboard.readChar 1
+label _while_label_34
+call Keyboard.keyPressed 0
+push constant 0
+eq
+not
+if-goto _while_label_35
+goto _while_label_34
+label _while_label_35
+call Keyboard.keyPressed 0
+pop local 0
+label _while_label_36
+call Keyboard.keyPressed 0
+push constant 0
+eq
+not
+not
+if-goto _while_label_37
+goto _while_label_36
+label _while_label_37
+push local 0
+return
+function Keyboard.readLine 2
+push argument 0
+call Output.printString 1
+pop temp 0
+push constant 64
+call String.new 1
+pop local 0
+label _while_label_38
+push constant 1
+neg
+not
+if-goto _while_label_39
+call Keyboard.readChar 0
+pop local 1
+push local 1
+call String.newLine 0
+eq
+not
+if-goto _if_label_40
+call Output.println 0
+pop temp 0
+push local 0
+return
+goto _if_label_41
+label _if_label_40
+push local 1
+call String.backSpace 0
+eq
+not
+if-goto _if_label_42
+call Output.backSpace 0
+pop temp 0
+push local 0
+call String.eraseLastChar 1
+pop temp 0
+goto _if_label_43
+label _if_label_42
+push local 1
+call Output.printChar 1
+pop temp 0
+push local 0
+push local 1
+call String.appendChar 2
+pop temp 0
+label _if_label_43
+label _if_label_41
+goto _while_label_38
+label _while_label_39
+push local 0
+return
+function Keyboard.readInt 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push argument 0
+call Output.printString 1
+pop temp 0
+label _while_label_44
+push constant 1
+neg
+not
+if-goto _while_label_45
+call Keyboard.readChar 0
+pop local 2
+push local 2
+call String.newLine 0
+eq
+not
+if-goto _if_label_46
+call Output.println 0
+pop temp 0
+push local 1
+not
+if-goto _if_label_48
+push local 0
+neg
+return
+goto _if_label_49
+label _if_label_48
+push local 0
+return
+label _if_label_49
+goto _if_label_47
+label _if_label_46
+push local 2
+call String.backSpace 0
+eq
+not
+if-goto _if_label_50
+call Output.backSpace 0
+pop temp 0
+push local 0
+push constant 10
+call Math.divide 2
+pop local 0
+goto _if_label_51
+label _if_label_50
+push local 2
+call Output.printChar 1
+pop temp 0
+push local 2
+push constant 45
+eq
+not
+if-goto _if_label_52
+push local 1
+not
+pop local 1
+goto _if_label_53
+label _if_label_52
+push local 0
+push constant 10
+call Math.multiply 2
+push local 2
+push constant 48
+sub
+add
+pop local 0
+label _if_label_53
+label _if_label_51
+label _if_label_47
+goto _while_label_44
+label _while_label_45
+push local 0
+return

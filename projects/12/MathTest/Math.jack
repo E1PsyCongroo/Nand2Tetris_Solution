@@ -73,11 +73,11 @@ class Math {
     function int divide(int x, int y) {
         var boolean negtive;
         var int q, result;
-        if (((x < 0) & (y > 0)) | ((x > 0) & (y < 0))) {
-            let negtive = true;
+        if (((x < 0) & (y < 0)) | ((x > 0) & (y > 0))) {
+            let negtive = false;
         }
         else {
-            let negtive = false;
+            let negtive = true;
         }
         let x = Math.abs(x);
         let y = Math.abs(y);

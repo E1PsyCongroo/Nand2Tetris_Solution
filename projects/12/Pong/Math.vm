@@ -1,0 +1,293 @@
+function Math.init 2
+push constant 16
+call Array.new 1
+pop static 0
+push constant 0
+pop local 0
+push constant 1
+pop local 1
+label _while_label_54
+push local 0
+push constant 16
+lt
+not
+if-goto _while_label_55
+push static 0
+push local 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1
+push local 1
+add
+pop local 1
+push local 0
+push constant 1
+add
+pop local 0
+goto _while_label_54
+label _while_label_55
+push constant 0
+return
+function Math.abs 0
+push argument 0
+push constant 0
+lt
+not
+if-goto _if_label_56
+push argument 0
+neg
+return
+label _if_label_56
+push argument 0
+return
+function Math.multiply 4
+push argument 0
+push constant 0
+lt
+push argument 1
+push constant 0
+gt
+and
+push argument 0
+push constant 0
+gt
+push argument 1
+push constant 0
+lt
+and
+or
+not
+if-goto _if_label_57
+push constant 1
+neg
+pop local 0
+goto _if_label_58
+label _if_label_57
+push constant 0
+pop local 0
+label _if_label_58
+push argument 0
+call Math.abs 1
+pop argument 0
+push argument 1
+call Math.abs 1
+pop argument 1
+push constant 0
+pop local 1
+push argument 0
+pop local 2
+push constant 0
+pop local 3
+label _while_label_59
+push local 3
+push constant 16
+lt
+not
+if-goto _while_label_60
+push argument 1
+push local 3
+push static 0
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+gt
+not
+if-goto _if_label_61
+push local 1
+push local 2
+add
+pop local 1
+label _if_label_61
+push local 2
+push local 2
+add
+pop local 2
+push local 3
+push constant 1
+add
+pop local 3
+goto _while_label_59
+label _while_label_60
+push local 0
+not
+if-goto _if_label_62
+push local 1
+neg
+return
+goto _if_label_63
+label _if_label_62
+push local 1
+return
+label _if_label_63
+function Math.divide 3
+push argument 0
+push constant 0
+lt
+push argument 1
+push constant 0
+gt
+and
+push argument 0
+push constant 0
+gt
+push argument 1
+push constant 0
+lt
+and
+or
+not
+if-goto _if_label_64
+push constant 1
+neg
+pop local 0
+goto _if_label_65
+label _if_label_64
+push constant 0
+pop local 0
+label _if_label_65
+push argument 0
+call Math.abs 1
+pop argument 0
+push argument 1
+call Math.abs 1
+pop argument 1
+push argument 1
+push argument 0
+gt
+not
+if-goto _if_label_66
+push constant 0
+return
+label _if_label_66
+push argument 0
+push constant 2
+push argument 1
+call Math.multiply 2
+call Math.divide 2
+pop local 1
+push argument 0
+push constant 2
+push local 1
+call Math.multiply 2
+push argument 1
+call Math.multiply 2
+sub
+push argument 1
+lt
+not
+if-goto _if_label_67
+push constant 2
+push local 1
+call Math.multiply 2
+pop local 2
+goto _if_label_68
+label _if_label_67
+push constant 2
+push local 1
+call Math.multiply 2
+push constant 1
+add
+pop local 2
+label _if_label_68
+push local 0
+not
+if-goto _if_label_69
+push local 2
+neg
+return
+goto _if_label_70
+label _if_label_69
+push local 2
+return
+label _if_label_70
+function Math.sqrt 3
+push constant 7
+pop local 0
+push constant 0
+pop local 1
+label _while_label_71
+push local 0
+push constant 0
+gt
+push local 0
+push constant 0
+eq
+or
+not
+if-goto _while_label_72
+push argument 0
+push local 1
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+add
+push local 1
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+add
+call Math.multiply 2
+sub
+pop local 2
+push local 2
+push constant 0
+gt
+push local 2
+push constant 0
+eq
+or
+not
+if-goto _if_label_73
+push local 1
+push local 0
+push static 0
+add
+pop pointer 1
+push that 0
+add
+pop local 1
+label _if_label_73
+push local 0
+push constant 1
+sub
+pop local 0
+goto _while_label_71
+label _while_label_72
+push local 1
+return
+function Math.max 0
+push argument 0
+push argument 1
+gt
+not
+if-goto _if_label_74
+push argument 0
+return
+goto _if_label_75
+label _if_label_74
+push argument 1
+return
+label _if_label_75
+function Math.min 0
+push argument 0
+push argument 1
+lt
+not
+if-goto _if_label_76
+push argument 0
+return
+goto _if_label_77
+label _if_label_76
+push argument 1
+return
+label _if_label_77
